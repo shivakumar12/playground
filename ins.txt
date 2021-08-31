@@ -1,0 +1,28 @@
+Download and install kubectl on local system
+https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/
+https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/
+Verify kubectl version by running the below command
+
+kubectl version 
+Step 2
+Download kind binary and install on local system
+MAC (Using curl)
+curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.11.0/kind-darwin-amd64
+chmod +x ./kind
+mv ./kind /some-dir-in-your-PATH/kind
+MAC (Using brew)
+brew install kind
+WINDOWS (Using curl)
+curl.exe -Lo kind-windows-amd64.exe https://kind.sigs.k8s.io/dl/v0.11.0/kind-windows-amd64
+Move-Item .\kind-windows-amd64.exe c:\some-dir-in-your-PATH\kind.exe
+Verify kind version by running the below command
+kind version 
+Step 3
+Install kubernetes cluster locally using the downloaded "kind" binary in the previous step
+git clone https://github.tools.sap/k8s-playground/k8s-kind-cluster.git
+cd k8s-kind-cluster
+kind create cluster --config=kind-v1.19.7.yaml
+Step 4
+Verify the nodes are up and running
+kubectl get nodes
+kubectl get pods --all-namespaces
