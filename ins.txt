@@ -19,7 +19,6 @@ Verify kind version by running the below command
 kind version 
 Step 3
 Install kubernetes cluster locally using the downloaded "kind" binary in the previous step
-git clone https://github.tools.sap/k8s-playground/k8s-kind-cluster.git
 cd k8s-kind-cluster
 kind create cluster --config=kind-v1.19.7.yaml
 Step 4
